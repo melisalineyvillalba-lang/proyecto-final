@@ -1,0 +1,44 @@
+# Matriz del menú
+menu = [
+    ["Hamburguesa", "comida", 25000],
+    ["Pizza", "comida", 32000],
+    ["Perro caliente", "comida", 15000],
+    ["Salchipapa", "comida", 35000],
+    ["Refresco", "bebida", 10000],
+    ["Helado", "postre", 18000]
+]
+print("¡Bienvenido a nuestro restaurante de comida rápida!")
+print("trendras un descuento del 15% en comida si tu compra es mayor a 20,000")
+
+# Función para calcular precio final
+def calcular_precio(categoria, precio):
+
+    categoria_objetivo = "comida"
+    umbral = 20000
+
+    if categoria == categoria_objetivo and precio > umbral:
+        precio_final = precio * 0.85
+    else:
+        precio_final = precio
+
+    return precio_final
+
+
+# Mostrar resultados
+print("MENÚ DEL RESTAURANTE\n")
+
+for producto in menu:
+
+    nombre = producto[0]
+    categoria = producto[1]
+    precio = producto[2]
+
+    precio_final = calcular_precio(categoria, precio)
+
+    print("Producto:", nombre)
+    print("Categoría:", categoria)
+    print("Precio base:", precio)
+    print("Precio final:", precio_final)
+    print("---------------------------")
+    
+    
